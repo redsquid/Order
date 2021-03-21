@@ -1,0 +1,26 @@
+app:
+  version: @project.version@
+
+server:
+  port: 8000
+
+
+
+
+# ===== Logging =====
+spring:
+#  main:
+#    banner-mode: "off"
+  banner:
+    location: classpath:/banner.txt
+
+
+
+# ===== Swagger ======
+# See ru.redsquid.examples.ms.order.config.SwaggerConfig
+#
+# json output
+# http://localhost:8000/v2/api-docs
+# ui
+# http://localhost:8000/swagger-ui/index.html
+
