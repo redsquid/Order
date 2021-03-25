@@ -10,8 +10,7 @@ import ru.redsquid.examples.ms.order.dto.OrderDTO;
 import java.util.Set;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OrderMapperTest {
 
@@ -47,5 +46,13 @@ public class OrderMapperTest {
         assertEquals(order.getPerson().getPhone(), dto.getPhone());
         assertTrue(CollectionUtils.isEqualCollection(order.getItems(), dto.getItems()));
         assertEquals(order.getDeliveryAddress(), dto.getDeliveryAddress());
+    }
+
+    @Test
+    void nullTest() {
+        OrderDTO dto = mapper.orderToOrderDTO(null);
+        Order order = mapper.orderDTOToOrder(null);
+        assertNull(dto);
+        assertNull(order);
     }
 }

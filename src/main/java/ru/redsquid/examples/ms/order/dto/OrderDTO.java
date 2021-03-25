@@ -5,6 +5,7 @@ import lombok.*;
 import java.util.Set;
 import java.util.UUID;
 
+@ToString
 @Getter
 @RequiredArgsConstructor
 public class OrderDTO {

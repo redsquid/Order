@@ -5,14 +5,20 @@ server:
   port: 8000
 
 
+# ===== Rabbit MQ =====
 
-
-# ===== Logging =====
+# ===== Logging =======
 spring:
 #  main:
 #    banner-mode: "off"
   banner:
     location: classpath:/banner.txt
+
+  rabbitmq:
+    host: 127.0.0.1
+#    port: 8100
+    username: guest
+    password: guest
 
 
 
