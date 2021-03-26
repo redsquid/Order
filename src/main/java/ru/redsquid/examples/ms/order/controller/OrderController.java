@@ -25,7 +25,7 @@ public class OrderController {
     @GetMapping("/order-{orderId}")
     @ApiOperation(value = "Find order by orderId", response = OrderDTO.class)
     public @ResponseBody OrderDTO find(@ApiParam("Order id (UUID)") @PathVariable UUID orderId) {
-        return mapper.orderToOrderDTO(service.find(orderId));
+        return null; //mapper.orderToOrderDTO(service.find(orderId));
     }
 
     @PostMapping
