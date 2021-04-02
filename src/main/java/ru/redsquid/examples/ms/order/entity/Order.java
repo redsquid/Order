@@ -18,16 +18,20 @@ public class Order {
     private UUID id;
 
     @MappedCollection(idColumn = "order_id")
+    private Customer customer;
+
+    @MappedCollection(idColumn = "order_id")
     private Set<Item> items;
-
-    private UUID personId;
-
-    private UUID deliveryAddressId;
 
     private State state;
 
     public enum State {
         PENDING,
-        CREATED
+        ERROR,
+        CREATED,
+        INVOICED,
+        PAID,
+        IN_PROGRESS,
+        READY
     }
 }

@@ -2,20 +2,29 @@ package ru.redsquid.examples.ms.order.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.redsquid.examples.ms.order.entity.Order;
 import ru.redsquid.examples.ms.order.dto.OrderDTO;
+import ru.redsquid.examples.ms.order.entity.Item;
+import ru.redsquid.examples.ms.order.entity.Order;
+
+import java.util.UUID;
 
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
 
-//    @Mapping(target = "phone", source = "order.person.phone")
-//    @Mapping(target = "firstName", source = "order.person.firstName")
-//    @Mapping(target = "lastName", source = "order.person.lastName")
-//    OrderDTO orderToOrderDTO(Order order);
-//
-//
-//    @Mapping(target = "person.phone", source = "dto.phone")
-//    @Mapping(target = "person.firstName", source = "dto.firstName")
-//    @Mapping(target = "person.lastName", source = "dto.lastName")
-//    Order orderDTOToOrder(OrderDTO dto);
+    @Mapping(target = "phone", source = "order.customer.phone")
+    @Mapping(target = "name", source = "order.customer.name")
+    @Mapping(target = "items", source = "order.items")
+    OrderDTO orderToOrderDTO(Order order);
+
+    @Mapping(target = "customer.phone", source = "dto.phone")
+    @Mapping(target = "customer.name", source = "dto.name")
+    @Mapping(target = "items", source = "dto.items")
+    Order orderDTOToOrder(OrderDTO dto);
+
+    @Mapping(target = "itemId", source = "uuid")
+    Item uuidToItem(UUID uuid);
+
+    default UUID uuidToItem(Item item) {
+        return item.getItemId();
+    }
 }

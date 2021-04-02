@@ -1,22 +1,20 @@
 package ru.redsquid.examples.ms.order.dto;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.Set;
 import java.util.UUID;
 
 @ToString
-@Getter
-@RequiredArgsConstructor
+@Data
+@NoArgsConstructor
 public class OrderDTO {
 
-    private final String firstName;
+    private String name;
 
-    private final String lastName;
+    private String phone;
 
-    private final String phone;
-
-    private final Set<UUID> items;
-
-    private final String deliveryAddress;
+    private Set<UUID> items;
 }

@@ -11,8 +11,6 @@
             <column name="id" type="uuid">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="person_id" type="uuid" />
-            <column name="delivery_address_id" type="uuid" />
             <column name="state" type="varchar(25)">
                 <constraints nullable="false"/>
             </column>

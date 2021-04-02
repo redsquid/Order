@@ -8,6 +8,7 @@
 
     <include file="changelog/create-extension-uuid-ossp.xml" relativeToChangelogFile="true"/>
     <include file="changelog/create-table-order.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/create-table-customer.xml" relativeToChangelogFile="true"/>
     <include file="changelog/create-table-item.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

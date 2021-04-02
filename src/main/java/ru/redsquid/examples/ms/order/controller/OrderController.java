@@ -37,12 +37,12 @@ public class OrderController {
     @PutMapping("/order-{orderId}")
     @ApiOperation(value = "Update order by orderId")
     public void update(@ApiParam("Order id (UUID)") @PathVariable UUID orderId, @RequestBody OrderDTO dto) {
-        service.update(orderId, dto);
+//        service.update(orderId, dto);
     }
 
     @DeleteMapping("/order-{orderId}")
     @ApiOperation(value = "Delete order by orderId")
     public void delete(@ApiParam("Order id (UUID)") @PathVariable UUID orderId) {
-        service.delete(orderId);
+//        service.delete(orderId);
     }
 }
