@@ -7,11 +7,11 @@ import ru.redsquid.examples.ms.order.constants.QueueName;
 
 @Component
 @RequiredArgsConstructor
-class StoreAcceptationSender {
+class StoreAcceptationCommandSender {
 
     private final RabbitTemplate rabbitTemplate;
 
-    public void send(String data) {
-        rabbitTemplate.convertAndSend(QueueName.STORE_ACCEPTATION_COMMAND, data);
+    public void send(StoreAcceptationCommand command) {
+        rabbitTemplate.convertAndSend(QueueName.STORE_ACCEPTATION_COMMAND, command);
     }
 }

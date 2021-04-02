@@ -1,6 +1,8 @@
 package ru.redsquid.examples.ms.order.config;
 
 import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -38,5 +40,10 @@ public class RabbitConfig {
     @Bean
     Queue storeReadyEventQueue() {
         return new Queue(STORE_READY_EVENT, false);
+    }
+
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
     }
 }

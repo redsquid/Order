@@ -7,4 +7,6 @@ import java.util.UUID;
 public interface OrderService {
 
     UUID create(OrderDTO dto);
+
+    void updateAcceptationState(UUID orderId, boolean accepted);
 }

@@ -27,7 +27,7 @@ public class Order {
 
     public enum State {
         PENDING,
-        ERROR,
+        DECLINE,
         CREATED,
         INVOICED,
         PAID,
