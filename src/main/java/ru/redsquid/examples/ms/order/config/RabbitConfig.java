@@ -23,8 +23,8 @@ public class RabbitConfig {
     }
 
     @Bean
-    Queue accountingInvoicedEventQueue() {
-        return new Queue(ACCOUNTING_INVOICED_EVENT, false);
+    Queue accountingInvoicingEventQueue() {
+        return new Queue(ACCOUNTING_INVOICING_EVENT, false);
     }
 
     @Bean
@@ -41,6 +41,26 @@ public class RabbitConfig {
     Queue storeReadyEventQueue() {
         return new Queue(STORE_READY_EVENT, false);
     }
+
+//    @Bean
+//    Queue accountingInvoicedEventQueue() {
+//        return new Queue(ACCOUNTING_INVOICED_EVENT, false);
+//    }
+//
+//    @Bean
+//    Queue accountingPaidEventQueue() {
+//        return new Queue(ORDER_ACCOUNTING_PAID_EVENT, false);
+//    }
+//
+//    @Bean
+//    Queue storeInProgressEventQueue() {
+//        return new Queue(STORE_IN_PROGRESS_EVENT, false);
+//    }
+//
+//    @Bean
+//    Queue storeReadyEventQueue() {
+//        return new Queue(STORE_READY_EVENT, false);
+//    }
 
     @Bean
     public MessageConverter jsonMessageConverter() {

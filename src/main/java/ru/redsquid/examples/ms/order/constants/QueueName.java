@@ -10,11 +10,20 @@ public class QueueName {
 
     public static final String STORE_ACCEPTATION_EVENT = "store_acceptation_event";
 
-    public static final String ACCOUNTING_INVOICED_EVENT = "accounting_invoiced_event";
+    public static final String ACCOUNTING_INVOICING_EVENT = "accounting_invoicing_event";
 
-    public static final String ACCOUNTING_PAID_EVENT = "accounting_paid_event";
+    public static final String ACCOUNTING_PAID_EVENT = "order_accounting_paid_event";
 
     public static final String STORE_IN_PROGRESS_EVENT = "store_in_progress_event";
 
     public static final String STORE_READY_EVENT = "store_ready_event";
+
+
+//    public static final String ACCOUNTING_INVOICED_EVENT = "accounting_invoiced_event";
+//
+//    public static final String ORDER_ACCOUNTING_PAID_EVENT = "order_accounting_paid_event";
+//
+//    public static final String STORE_IN_PROGRESS_EVENT = "store_in_progress_event";
+//
+//    public static final String STORE_READY_EVENT = "store_ready_event";
 }

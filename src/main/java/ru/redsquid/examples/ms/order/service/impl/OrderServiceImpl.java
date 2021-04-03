@@ -49,6 +49,42 @@ class OrderServiceImpl implements OrderService {
         }
     }
 
+    @Transactional
+    public void updateInvoicedState(UUID orderId) {
+        System.out.println("updateInvoicingState: " + orderId);
+        Order order = repo.findById(orderId).orElseThrow();
+        if (order.getState() == Order.State.CREATED) {
+            order.setState(Order.State.INVOICED);
+            repo.save(order);
+        }
+    }
+
+    @Transactional
+    public void updatePaidState(UUID orderId) {
+        System.out.println("updatePaidState: " + orderId);
+        Order order = repo.findById(orderId).orElseThrow();
+        if (order.getState() == Order.State.INVOICED) {
+            order.setState(Order.State.PAID);
+            repo.save(order);
+        }
+    }
+
+    @Transactional
+    public void updateInProgressState(UUID orderId) {
+        System.out.println("updateInProgressState: " + orderId);
+        Order order = repo.findById(orderId).orElseThrow();
+        order.setState(Order.State.IN_PROGRESS);
+        repo.save(order);
+    }
+
+    @Transactional
+    public void updateReadyState(UUID orderId) {
+        System.out.println("updateReadyState: " + orderId);
+        Order order = repo.findById(orderId).orElseThrow();
+        order.setState(Order.State.READY);
+        repo.save(order);
+    }
+
     public void update(UUID orderId, OrderDTO dto) {
         System.out.println("UPDATE: " + orderId + " " + dto.toString());
     }
