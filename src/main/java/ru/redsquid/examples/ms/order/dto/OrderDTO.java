@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Set;
-import java.util.UUID;
 
 @ToString
 @Data
@@ -16,5 +15,5 @@ public class OrderDTO {
 
     private String phone;
 
-    private Set<UUID> items;
+    private Set<Long> items;
 }

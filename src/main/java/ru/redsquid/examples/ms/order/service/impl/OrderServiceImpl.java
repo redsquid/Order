@@ -21,11 +21,6 @@ class OrderServiceImpl implements OrderService {
 
     private final StoreAcceptationCommandSender sender;
 
-    public Order find(UUID orderId) {
-        System.out.println("FIND " + orderId);
-        return null;
-    }
-
     public UUID create(OrderDTO dto) {
         System.out.println("CREATE " + dto.toString());
 
@@ -83,13 +78,5 @@ class OrderServiceImpl implements OrderService {
         Order order = repo.findById(orderId).orElseThrow();
         order.setState(Order.State.READY);
         repo.save(order);
-    }
-
-    public void update(UUID orderId, OrderDTO dto) {
-        System.out.println("UPDATE: " + orderId + " " + dto.toString());
-    }
-
-    public void delete(UUID orderId) {
-        System.out.println("DELETE: " + orderId);
     }
 }

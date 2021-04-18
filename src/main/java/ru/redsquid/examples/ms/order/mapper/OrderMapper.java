@@ -7,8 +7,6 @@ import ru.redsquid.examples.ms.order.entity.Item;
 import ru.redsquid.examples.ms.order.entity.Order;
 import ru.redsquid.examples.ms.order.service.impl.StoreAcceptationCommand;
 
-import java.util.UUID;
-
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
 
@@ -22,15 +20,14 @@ public interface OrderMapper {
     @Mapping(target = "items", source = "dto.items")
     Order orderDTOToOrder(OrderDTO dto);
 
-    @Mapping(target = "itemId", source = "uuid")
-    Item uuidToItem(UUID uuid);
+    @Mapping(target = "itemId", source = "itemId")
+    Item uuidToItem(Long itemId);
 
-    default UUID uuidToItem(Item item) {
+    default Long uuidToItem(Item item) {
         return item.getItemId();
     }
 
     @Mapping(target = "orderId", source = "order.id")
     @Mapping(target = "items", source = "order.items")
     StoreAcceptationCommand orderToCommand(Order order);
-
 }

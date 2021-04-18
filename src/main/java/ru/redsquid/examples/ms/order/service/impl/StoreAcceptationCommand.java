@@ -14,5 +14,5 @@ public class StoreAcceptationCommand {
 
     private UUID orderId;
 
-    private Set<UUID> items;
+    private Set<Long> items;
 }

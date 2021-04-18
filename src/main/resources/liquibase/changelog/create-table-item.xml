@@ -14,7 +14,7 @@
             <column name="order_id" type="uuid">
                 <constraints nullable="false" foreignKeyName="fk_order_id" references="orders(id)"/>
             </column>
-            <column name="item_id" type="uuid">
+            <column name="item_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>

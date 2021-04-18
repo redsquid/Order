@@ -1,7 +1,3 @@
-FROM archlinux:latest
-RUN pacman -Syyu --noconfirm && pacman -S --noconfirm jdk11-openjdk
-
+FROM openjdk:11
 COPY target/Order-1.0.jar /
-COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
-
+CMD ["java", "-jar", "/Order-1.0.jar"]

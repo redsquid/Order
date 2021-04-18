@@ -4,25 +4,24 @@ app:
 server:
   port: 8000
 
-
-# ===== Rabbit MQ =====
-
 # ===== Logging =======
 spring:
 #  main:
 #    banner-mode: "off"
   banner:
     location: classpath:/banner.txt
+  # ===== Datasource =====
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5001/postgres
+    url: jdbc:postgresql://order-db:5432/postgres
     username: postgres
     password: postgres
   liquibase:
     change-log: classpath:liquibase/liquibase-changelog.xml
     enabled: true
+  # ===== Rabbit MQ =====
   rabbitmq:
-    host: 127.0.0.1
+    host: rabbit
 #    port: 8100
     username: guest
     password: guest

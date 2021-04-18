@@ -15,5 +15,5 @@ public class Item {
 
     private UUID orderId;
 
-    private UUID itemId;
+    private Long itemId;
 }
