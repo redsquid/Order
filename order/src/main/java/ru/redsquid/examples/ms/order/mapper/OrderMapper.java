@@ -5,7 +5,7 @@ import org.mapstruct.Mapping;
 import ru.redsquid.examples.ms.order.dto.OrderDTO;
 import ru.redsquid.examples.ms.order.entity.Item;
 import ru.redsquid.examples.ms.order.entity.Order;
-import ru.redsquid.examples.ms.order.service.impl.StoreAcceptationCommand;
+import ru.redsquid.examples.ms.store.queue.message.AcceptationCommand;
 
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
@@ -29,5 +29,5 @@ public interface OrderMapper {
 
     @Mapping(target = "orderId", source = "order.id")
     @Mapping(target = "items", source = "order.items")
-    StoreAcceptationCommand orderToCommand(Order order);
+    AcceptationCommand orderToCommand(Order order);
 }
