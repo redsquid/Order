@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @ToString
@@ -16,4 +17,7 @@ public class OrderDTO {
     private String phone;
 
     private Set<Long> items;
+
+    @NotNull
+    private Boolean notification;
 }
