@@ -97,4 +97,9 @@ class OrderServiceImpl implements OrderService {
             }
         }
     }
+
+    public void sendNotification(UUID orderId, String message) {
+        Order order = repo.findById(orderId).orElseThrow();
+        notificationClient.sendSms(new Notification(order.getCustomer().getPhone(), message));
+    }
 }

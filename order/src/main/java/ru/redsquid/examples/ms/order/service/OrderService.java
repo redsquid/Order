@@ -1,5 +1,6 @@
 package ru.redsquid.examples.ms.order.service;
 
+import ru.redsquid.examples.ms.order.client.Notification;
 import ru.redsquid.examples.ms.order.dto.OrderDTO;
 
 import java.util.UUID;
@@ -17,4 +18,6 @@ public interface OrderService {
     void updateInProgressState(UUID orderId);
 
     void updateReadyState(UUID orderId);
+
+    void sendNotification(UUID orderId, String message);
 }
